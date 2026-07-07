@@ -1,5 +1,8 @@
 package dev.vetyutnev.ministudycrud;
 
-
-public class User {
+public record User(
+        Long id,
+        String name,
+        int age
+) {
 }
