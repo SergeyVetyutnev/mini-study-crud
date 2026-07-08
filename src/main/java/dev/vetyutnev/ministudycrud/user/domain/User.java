@@ -1,4 +1,4 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.user.domain;
 
 public record User(
         Long id,

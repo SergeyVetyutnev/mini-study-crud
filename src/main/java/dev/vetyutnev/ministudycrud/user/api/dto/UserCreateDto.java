@@ -1,4 +1,4 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.user.api.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

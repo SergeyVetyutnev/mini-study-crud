@@ -1,4 +1,4 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.user.api.dto;
 
 public record UserDto(
         Long id,

@@ -1,5 +1,9 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.user.api;
 
+import dev.vetyutnev.ministudycrud.user.mapper.UserMapper;
+import dev.vetyutnev.ministudycrud.user.service.UserService;
+import dev.vetyutnev.ministudycrud.user.api.dto.UserCreateDto;
+import dev.vetyutnev.ministudycrud.user.api.dto.UserDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

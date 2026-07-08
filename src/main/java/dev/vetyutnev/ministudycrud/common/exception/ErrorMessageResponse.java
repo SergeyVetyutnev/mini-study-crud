@@ -1,4 +1,4 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.common.exception;
 
 import java.time.LocalDateTime;
 

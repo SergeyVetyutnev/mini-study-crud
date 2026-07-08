@@ -1,5 +1,9 @@
-package dev.vetyutnev.ministudycrud;
+package dev.vetyutnev.ministudycrud.user.service;
 
+import dev.vetyutnev.ministudycrud.common.exception.UserNotFoundException;
+import dev.vetyutnev.ministudycrud.user.domain.User;
+import dev.vetyutnev.ministudycrud.user.mapper.UserMapper;
+import dev.vetyutnev.ministudycrud.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
