@@ -81,7 +81,6 @@ class UserServiceTest {
                 .build();
 
         User userDomain = new User(USER_ID, USER_NAME, USER_AGE);
-        User incorrectUserDomain = new User(USER_ID, USER_NAME, 999);
 
         Mockito.when(userRepository.save(userEntity)).thenReturn(userEntity);
         Mockito.when(userMapper.toDomain(userEntity)).thenReturn(userDomain);
@@ -92,7 +91,7 @@ class UserServiceTest {
         Assertions.assertThat(actualUser)
                 .isNotNull()
                 .usingRecursiveComparison()
-                .isEqualTo(incorrectUserDomain);
+                .isEqualTo(userDomain);
 
         Mockito.verify(userRepository).save(userEntity);
     }
