@@ -83,11 +83,8 @@ jobs:
           script: |
             cd /opt/mini-study-crud
             echo "IMAGE_TAG=$COMMIT_SHA" > .env
-            docker compose pull app
-            docker compose up -d
-            
-            docker compose -f docker-compose.prod.yml pull app
-            docker compose -f docker-compose.prod.yml up -d
+            docker compose -f docker-compose.prod.yaml pull app
+            docker compose -f docker-compose.prod.yaml up -d
 
       - name: Health check
         env:
