@@ -20,3 +20,13 @@ app:
     redis:
       url: redis://:${REDIS_PASSWORD:redis_pass}@${REDIS_HOST:localhost}:6379
       expiration-duration: 10s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
