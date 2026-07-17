@@ -91,5 +91,5 @@ jobs:
           VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
           echo "Waiting for Spring Boot to start..."
-          sleep 15
-          curl --fail --retry 10 --retry-delay 5 http://$VPS_HOST:8080/swagger-ui/index.html
+          sleep 10
+          curl --fail --retry-all-errors --retry 10 --retry-delay 5 http://$VPS_HOST:8080/swagger-ui/index.html
