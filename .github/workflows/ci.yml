@@ -59,6 +59,15 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
+      - name: Copy docker-compose to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "docker-compose.prod.yaml"
+          target: "/opt/mini-study-crud/"
+
       - name: Deploy to VPS via SSH Action
         uses: appleboy/ssh-action@v1.0.3
         env:
@@ -73,6 +82,9 @@ jobs:
             echo "IMAGE_TAG=$COMMIT_SHA" > .env
             docker compose pull app
             docker compose up -d
+            
+            docker compose -f docker-compose.prod.yml pull app
+            docker compose -f docker-compose.prod.yml up -d
 
       - name: Health check
         env:
